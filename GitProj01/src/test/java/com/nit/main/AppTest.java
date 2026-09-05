@@ -38,4 +38,12 @@ public class AppTest {
     	int actual=app.sum(0,0);
         assertEquals(exp, actual);
     }
+    @Test
+    public void testSumWithZeroAndPositive() {
+    	AppMain app=new AppMain();
+    	int exp=1;
+    	int actual=app.sum(0,1);
+        assertEquals(exp, actual);
+    }
+    
 }
