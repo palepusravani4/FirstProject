@@ -1,5 +1,6 @@
 package com.nit.main;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -9,11 +10,32 @@ import org.junit.jupiter.api.Test;
  */
 public class AppTest {
 
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
+    public void testSumWithPositives() {
+    	AppMain app=new AppMain();
+    	int exp=500;
+    	int actual=app.sum(200,300);
+        assertEquals(exp, actual);
+    }
+    @Test
+    public void testSumWithNegatives() {
+    	AppMain app=new AppMain();
+    	int exp=-500;
+    	int actual=app.sum(-200,-300);
+        assertEquals(exp, actual);
+    }
+    @Test
+    public void testSumWithMixedValues() {
+    	AppMain app=new AppMain();
+    	int exp=100;
+    	int actual=app.sum(-200,300);
+        assertEquals(exp, actual);
+    }
+    @Test
+    public void testSumWithZeros() {
+    	AppMain app=new AppMain();
+    	int exp=0;
+    	int actual=app.sum(0,0);
+        assertEquals(exp, actual);
     }
 }
